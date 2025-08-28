@@ -1,0 +1,20 @@
+app:
+  model: ${OPENROUTER_MODEL:-openai/gpt-oss-20b}
+  temperature: 0.2
+  top_p: 0.9
+  k_context: 6
+
+pinecone:
+  index: ${PINECONE_INDEX:-gani}
+  cloud: ${PINECONE_CLOUD:-aws}
+  region: ${PINECONE_REGION:-us-east-1}
+  namespaces: [personal, website, medium]
+
+retrieval:
+  use_reranker: false
+  chunk_char_limit: 1200
+  embedding_model: BAAI/bge-large-en-v1.5
+
+memory:
+  enable: true
+  ttl_days: 7
